@@ -6,19 +6,19 @@ import './App.css'
 function App() {
   const [positionClickList, setPositionClickList] = useState([]);
   
-  const handleClick = (event) => {
+  const handleClick = async (event) => {
     const x = event.pageX;
     const y = event.pageY;
-
-    axios.get('https://api.thecatapi.com/v1/images/search')
-      .then(response => {
+  
+    try {
+      const response = await axios.get('https://api.thecatapi.com/v1/images/search');
       const url = response.data[0].url;
       setPositionClickList((prevList) => [...prevList, { x, y, url }]);
-    })
-    .catch(error => {
+    } catch (error) {
       console.error("Ocorreu um erro ao fazer a requisição: ", error);
-    });
+    }
   }
+  
 
   const handleRedo = (event) => {
     event.stopPropagation();
