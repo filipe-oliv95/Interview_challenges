@@ -32,13 +32,22 @@ function App() {
 
   return (
     <div id="container" onClick={handleClick}>
+        <h1>Clique em qualquer lugar...</h1>
+        {positionClickList.length > 0 ? 
+          <>
+            <div className="btn-container">
+              <button onClick={handleRedo} id="btn" className='btn-redo'>Apagar último</button>
+              <button onClick={handleClear} id="btn" className='btn-clear'>Apagar todos</button>
+            </div>
+            <h1>Contador: {positionClickList.length}</h1>
+          </> : ""}
+        
+        
         <>
           {positionClickList.map((position, index) => 
             <Bubble key={index} x={position.x} y={position.y} url={position.url} />
           )}
         </>
-      <button onClick={handleRedo} id="btn" className='btn-redo'>redo</button>
-      <button onClick={handleClear} id="btn" className='btn-clear'>clear</button>
     </div>
   )
 }
