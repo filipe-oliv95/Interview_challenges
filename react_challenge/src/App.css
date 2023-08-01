@@ -11,12 +11,20 @@
   height: 100vh;
 }
 
-.btn-redo {
+#btn {
   position: absolute;
   top: 0;
   left: 0;
-  padding: 10px 30px;
-  margin: 10px;
   z-index: 999;
   cursor: pointer;
+  /* padding: 10px 35px; */
+  height: 30px;
+  width: 60px;
+}
+
+.btn-redo {
+  margin: 5px;
+}
+.btn-clear {
+  margin: 40px 5px;
 }

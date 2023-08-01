@@ -25,6 +25,11 @@ function App() {
     setPositionClickList((prevList) => prevList.slice(0, prevList.length - 1));
   }
 
+  const handleClear = (event) => {
+    event.stopPropagation();
+    setPositionClickList([]);
+  }
+
   return (
     <div id="container" onClick={handleClick}>
         <>
@@ -32,7 +37,8 @@ function App() {
             <Bubble key={index} x={position.x} y={position.y} url={position.url} />
           )}
         </>
-      <button onClick={handleRedo} className='btn-redo'>redo</button>
+      <button onClick={handleRedo} id="btn" className='btn-redo'>redo</button>
+      <button onClick={handleClear} id="btn" className='btn-clear'>clear</button>
     </div>
   )
 }
