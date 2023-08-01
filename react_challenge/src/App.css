@@ -15,7 +15,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  padding: 30px;
+  padding: 10px 30px;
+  margin: 10px;
   z-index: 999;
   cursor: pointer;
 }
